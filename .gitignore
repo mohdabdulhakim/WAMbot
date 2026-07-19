@@ -78,3 +78,18 @@ uploads/
 *.tar
 *.gz
 *.bak
+# Dependencies
+node_modules/
+
+# Builds
+dist/
+.next/
+out/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
