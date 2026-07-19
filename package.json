@@ -1,0 +1,30 @@
+{
+  "name": "wambot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WAMbot - WhatsApp AI Automation Platform",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,green \"npm run dev -w @wambot/api\" \"npm run dev -w @wambot/web\"",
+    "build": "npm run build -w @wambot/api && npm run build -w @wambot/web",
+    "start": "concurrently -n api,web -c blue,green \"npm run start -w @wambot/api\" \"npm run start -w @wambot/web\"",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "npm run typecheck -w @wambot/api && npm run typecheck -w @wambot/web"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.20.0",
+    "eslint-config-prettier": "^10.0.1",
+    "prettier": "^3.5.0",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.24.0"
+  }
+}
