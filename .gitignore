@@ -55,10 +55,11 @@ Thumbs.db
 
 # ===========================
 # WhatsApp Sessions
+# (runtime credential storage only — anchored so source modules
+#  named auth/sessions/tokens are never ignored)
 # ===========================
-sessions/
-auth/
-tokens/
+/storage/whatsapp/
+apps/api/storage/
 
 # ===========================
 # Uploads
@@ -93,3 +94,4 @@ out/
 
 # Logs
 *.log
+**/*.tsbuildinfo

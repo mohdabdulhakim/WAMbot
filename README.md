@@ -10,12 +10,14 @@ WhatsApp AI Automation Platform — monorepo.
 
 ## Getting Started
 
-Requires Node.js >= 22.
+Requires Node.js >= 22 and PostgreSQL 16.
 
 ```bash
+createdb wambot_dev   # or create a database and set DATABASE_URL accordingly
 cp apps/api/.env.example apps/api/.env
 cp apps/web/.env.example apps/web/.env
 npm install
+npm run db:migrate -w @wambot/api
 npm run dev
 ```
 
@@ -25,5 +27,6 @@ npm run dev
 ## Scripts
 
 - `npm run dev` — start both apps in watch mode
+- `npm run db:migrate -w @wambot/api` — apply pending SQL migrations
 - `npm run build` — build both apps
 - `npm run lint` / `npm run typecheck` / `npm run format` — quality checks
